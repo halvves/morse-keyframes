@@ -1,0 +1,79 @@
+{
+  "name": "morse-keyframes",
+  "description": "turn morse code into css keyframes 🗝",
+  "license": "MIT",
+  "author": "halvves <hi@halvves.com> (https://halvves.com/)",
+  "version": "0.0.0",
+  "main": "dist/morse-keyframes.cjs.js",
+  "module": "dist/morse-keyframes.esm.js",
+  "browser": "dist/morse-keyframes.umd.js",
+  "unpkg": "dist/morse-keyframes.umd.js",
+  "homepage": "https://github.com/halvves/morse-keyframes",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/halvves/morse-keyframes.git"
+  },
+  "bugs": {
+    "url": "https://github.com/halvves/morse-keyframes/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "morse",
+    "css",
+    "animation",
+    "easter eggs"
+  ],
+  "scripts": {
+    "prepublishOnly": "npm run build",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "pretty": "npm run pretty-src -- \"src/**/*.js\" && npm run pretty-pkg",
+    "pretty-pkg": "prettier-package-json --write ./package.json",
+    "pretty-src": "prettier --write"
+  },
+  "devDependencies": {
+    "@ampproject/rollup-plugin-closure-compiler": "^0.4.3",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "prettier": "^1.13.7",
+    "prettier-package-json": "^1.6.0",
+    "rollup": "^0.62.0",
+    "rollup-plugin-babel": "^3.0.7"
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "safari >= 7"
+            ]
+          },
+          "modules": false
+        }
+      ]
+    ]
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "npm run pretty-src --",
+      "git add"
+    ],
+    "package.json": [
+      "prettier-package-json --write",
+      "git add"
+    ]
+  },
+  "prettier": {
+    "semi": true,
+    "singleQuote": true,
+    "tabWidth": 2,
+    "trailingComma": "es5"
+  }
+}
