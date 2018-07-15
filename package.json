@@ -3,7 +3,7 @@
   "description": "turn morse code into css keyframes 🗝",
   "license": "MIT",
   "author": "merl <merl@vvvvv.co> (https://vvvvv.co/)",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "main": "dist/morse-keyframes.cjs.js",
   "module": "dist/morse-keyframes.esm.js",
   "browser": "dist/morse-keyframes.umd.js",
