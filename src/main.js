@@ -7,6 +7,8 @@ const DELAY = 0.3;
 export default (
   morse = '',
   percentOffset,
+  minOpacity = 0,
+  maxOpacity = 1,
   dash = 'r',
   dot = 'g',
   space = 'b'
@@ -21,15 +23,18 @@ export default (
 
   let p = offset + DELAY * mult;
   return (
-    getKeyframe(0, 0) +
-    (offset ? getKeyframe(offset, 0) : '') +
+    getKeyframe(0, minOpacity) +
+    (offset ? getKeyframe(offset, minOpacity) : '') +
     chars
       .map(c => {
         const t = getTime(c, dash, dot);
         const keys =
-          getKeyframe(p, c === space ? 0 : 1) +
-          getKeyframe(p + (t / 2) * mult, c === dash ? 1 : 0) +
-          getKeyframe(p + t * mult, 0);
+          getKeyframe(p, c === space ? minOpacity : maxOpacity) +
+          getKeyframe(
+            p + (t / 2) * mult,
+            c === dash ? maxOpacity : minOpacity
+          ) +
+          getKeyframe(p + t * mult, minOpacity);
 
         p = p + (t + DELAY) * mult;
 
