@@ -1,2 +1,2 @@
-export default (percentage, opacity) =>
-  `${percentage.toFixed(2)}% {opacity: ${opacity};}\n`;
+export default (percentage, val) =>
+  `${percentage.toFixed(2)}% ${typeof val === 'number' ? `{opacity: ${val};}` : val}\n`;
