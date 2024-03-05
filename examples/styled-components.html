@@ -1,37 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>morse-keyframes (styled-components)</title>
-    <script src="https://unpkg.com/react@16.5.0/umd/react.production.min.js"></script>
-    <script src="https://unpkg.com/react-dom@16.5.0/umd/react-dom.production.min.js"></script>
-    <script src="https://unpkg.com/styled-components@3.4.6/dist/styled-components.min.js"></script>
-    <script src="../dist/morse-keyframes.umd.js"></script>
-  </head>
-  <body>
-    <script type="text/javascript">
-      const { Component, Fragment, PureComponent } = React;
-      const { css, injectGlobal, keyframes, default: styled } = window.styled;
+	<head>
+		<meta charset="UTF-8" />
+		<title>morse-keyframes (styled-components)</title>
+		<script src="https://unpkg.com/react@16.5.0/umd/react.production.min.js"></script>
+		<script src="https://unpkg.com/react-dom@16.5.0/umd/react-dom.production.min.js"></script>
+		<script src="https://unpkg.com/styled-components@3.4.6/dist/styled-components.min.js"></script>
+		<script src="../dist/morse-keyframes.umd.js"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			const { Component, Fragment, PureComponent } = React;
+			const { css, injectGlobal, keyframes, default: styled } = window.styled;
 
-      const Secret = styled.div`
-        position: fixed;
-        bottom: 0;
-        left: calc(50% - 25px);
-        height: 50px;
-        width: 50px;
-        background: #00f;
-        border-radius: 4px;
-        animation: 5s linear infinite ${keyframes`${morseKeyframes(
-          'gggbrrrbggg',
-          20,
-          '{transform: translate3d(0, 40%, 0) scale3d(1.5, 1, 1); opacity: 0;}',
-          '{transform: translate3d(0, 0, 0) scale3d(1, 1, 1); opacity: 1;}',
-        )}`};
-      `;
+			const Secret = styled.div`
+				position: fixed;
+				bottom: 0;
+				left: calc(50% - 25px);
+				height: 50px;
+				width: 50px;
+				background: #00f;
+				border-radius: 4px;
+				animation: 5s linear infinite
+					${keyframes`${morseKeyframes(
+						'gggbrrrbggg',
+						20,
+						'{transform: translate3d(0, 40%, 0) scale3d(1.5, 1, 1); opacity: 0;}',
+						'{transform: translate3d(0, 0, 0) scale3d(1, 1, 1); opacity: 1;}'
+					)}`};
+			`;
 
-      const app = document.createElement('div');
-      document.body.appendChild(app);
-      ReactDOM.render(React.createElement(Secret), app);
-    </script>
-  </body>
+			const app = document.createElement('div');
+			document.body.appendChild(app);
+			ReactDOM.render(React.createElement(Secret), app);
+		</script>
+	</body>
 </html>

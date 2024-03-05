@@ -2,8 +2,8 @@
 
 |   |   |
 |---|---|
-| npm | [v0.2.1](https://www.npmjs.com/package/morse-keyframes) |
-| size | [472b minzipped](https://bundlephobia.com/package/morse-keyframes@0.2.1) |
+| npm | [v0.3.0](https://www.npmjs.com/package/morse-keyframes) |
+| size | [452b minzipped](https://bundlephobia.com/package/morse-keyframes@0.3.0) |
 | dependencies | [zero](./package.json) |
 | license | [MIT](./LICENSE) |
 
@@ -26,13 +26,13 @@ const DOT_CHAR = '.';
 const SPACE_CHAR = ' ';
 
 const m = morseKeyframes(
-  CODE_STRING,
-  PERCENT_OFFSET,
-  0,
-  1,
-  DASH_CHAR,
-  DOT_CHAR,
-  SPACE_CHAR
+	CODE_STRING,
+	PERCENT_OFFSET,
+	0,
+	1,
+	DASH_CHAR,
+	DOT_CHAR,
+	SPACE_CHAR
 );
 
 const style = document.createElement('style');
@@ -42,7 +42,7 @@ document.getElementsByTagName('head')[0].appendChild(style);
 ```
 ```css
 .selector {
-  animation: 4s linear infinite morse;
+	animation: 4s linear infinite morse;
 }
 ```
 
@@ -56,19 +56,19 @@ import styled, { keyframes } from 'styled-components';
 import morse from 'morse-keyframes';
 
 const Secret = styled.div`
-  position: fixed;
-  bottom: 0;
-  left: calc(50% - 25px);
-  height: 50px;
-  width: 50px;
-  background: #00f;
-  border-radius: 4px;
-  animation: 5s linear infinite ${keyframes`${morse(
-    'gggbrrrbggg',
-    20,
-    '{transform: translate3d(0, 40%, 0) scale3d(1.5, 1, 1); opacity: 0;}',
-    '{transform: translate3d(0, 0, 0) scale3d(1, 1, 1); opacity: 1;}',
-  )}`};
+	position: fixed;
+	bottom: 0;
+	left: calc(50% - 25px);
+	height: 50px;
+	width: 50px;
+	background: #00f;
+	border-radius: 4px;
+	animation: 5s linear infinite ${keyframes`${morse(
+		'gggbrrrbggg',
+		20,
+		'{transform: translate3d(0, 40%, 0) scale3d(1.5, 1, 1); opacity: 0;}',
+		'{transform: translate3d(0, 0, 0) scale3d(1, 1, 1); opacity: 1;}'
+	)}`};
 `;
 
 const app = document.createElement('div');
