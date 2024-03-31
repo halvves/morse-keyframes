@@ -16,6 +16,7 @@ export default [
 		output: [
 			{ name: 'morseKeyframes', file: pkg.browser, format: 'umd' },
 			{ file: pkg.main, format: 'cjs' },
+			{ file: pkg.module.replace('js', 'min.js'), format: 'es' },
 		],
 		plugins: [swc(defineRollupSwcOption({ minify: true }))],
 	},
