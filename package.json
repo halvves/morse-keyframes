@@ -3,7 +3,7 @@
   "description": "turn morse code into css keyframes 🗝",
   "license": "MIT",
   "author": "merl <merl@vvvvv.co> (https://vvvvv.co/)",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "type": "module",
   "main": "dist/morse-keyframes.cjs.js",
   "module": "dist/morse-keyframes.esm.js",
@@ -32,7 +32,8 @@
     "build": "rollup -c",
     "dev": "rollup -c -w",
     "lint": "eslint src --report-unused-disable-directives --max-warnings 0",
-    "lint:fix": "eslint src --fix --quiet"
+    "lint:fix": "eslint src --fix --quiet",
+    "sizecheck": "node scripts/sizecheck.js"
   },
   "devDependencies": {
     "@swc/core": "^1.4.11",

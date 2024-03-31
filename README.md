@@ -2,8 +2,8 @@
 
 |   |   |
 |---|---|
-| npm | [v0.3.0](https://www.npmjs.com/package/morse-keyframes) |
-| size | [452b minzipped](https://bundlephobia.com/package/morse-keyframes@0.3.0) |
+| npm | [v0.3.1](https://www.npmjs.com/package/morse-keyframes) |
+| size | [420b minzipped](./scripts/sizecheck.js) |
 | dependencies | [zero](./package.json) |
 | license | [MIT](./LICENSE) |
 
